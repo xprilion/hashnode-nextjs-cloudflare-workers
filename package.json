@@ -12,6 +12,8 @@
     "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.4",
+    "@apollo/experimental-nextjs-app-support": "^0.8.0",
     "date-fns": "^3.3.1",
     "next": "14.1.0",
     "react": "^18",

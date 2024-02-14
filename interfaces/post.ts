@@ -1,15 +1,22 @@
 import { type Author } from "./author";
 
 export type Post = {
-  slug: string;
-  title: string;
-  date: string;
-  coverImage: string;
-  author: Author;
-  excerpt: string;
-  ogImage: {
+    id: string;
+    slug: string;
+    brief: string;
+    title: string;
+    subtitle: string;
     url: string;
-  };
-  content: string;
-  preview?: boolean;
+    publishedAt: string;
+    author: Author;
+    coverImage?: {
+      url: string;
+    };
+    content?: {
+      html: string;
+      },
+  seo: {
+      title: string;
+      description: string;
+    }
 };
