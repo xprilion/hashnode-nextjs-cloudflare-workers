@@ -6,7 +6,7 @@ import { type Author } from "@/interfaces/author";
 
 type Props = {
   title: string;
-  coverImage: string;
+  coverImage: any;
   date: string;
   author: Author;
 };

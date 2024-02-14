@@ -1,5 +1,6 @@
 import { Post } from "@/interfaces/post";
 
+
 // Assuming Hashnode's GraphQL endpoint and your blog's identifier
 const HASHNODE_API_URL = process.env.HASHNODE_API_URL || "https://gql.hashnode.com"
 // const YOUR_BLOG_ID = 'your_blog_id_here'; // Use if needed to scope queries to your blog
@@ -108,5 +109,5 @@ export async function getAllPosts(): Promise<Post[]> {
 
   const variables = { host: process.env.HASHNODE_BLOG_URL };
   const data = await fetchGraphQL(query, variables);
-  return data.publication.posts.edges.map(edge => edge.node);
+  return data.publication.posts.edges.map((edge: any) => edge.node);
 }

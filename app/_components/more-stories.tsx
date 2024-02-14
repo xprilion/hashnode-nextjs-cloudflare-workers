@@ -18,10 +18,10 @@ export function MoreStories({ posts }: Props) {
               key={post.id}
               title={post.title}
               coverImage={post.coverImage}
-              date={post.date}
+              date={post.publishedAt}
               author={post.author}
               slug={post.slug}
-              excerpt={post.excerpt}
+              excerpt={post.brief}
             />
             )})}
       </div>

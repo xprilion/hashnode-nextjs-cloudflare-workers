@@ -4,6 +4,8 @@ import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
 
+export const runtime = 'edge';
+
 export default async function Index() {
   const allPosts = await getAllPosts();
   
