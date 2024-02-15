@@ -40,7 +40,7 @@ type Params = {
   };
 };
 
-export async function generateMetadata({ params }: Params): Metadata {
+export async function generateMetadata({ params }: Params) {
   const post = await getPostBySlug(params.slug);
 
   if (!post) {
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Params): Metadata {
 
   const title = `${post.title} | Next.js Blog Example with Hashnode Headless`;
 
-  let ogData = {
+  let ogData: {openGraph: {title: String; images?: String[]}} = {
     openGraph: {
       title
     }
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: Params): Metadata {
     }
   }
 
-  return ogData;
+  return ogData as Metadata;
 }
 
 export async function generateStaticParams() {
