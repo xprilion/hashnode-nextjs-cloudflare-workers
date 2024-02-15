@@ -36,6 +36,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
               title
               subtitle
               brief
+              publishedAt
               author {
                 name
                 username
@@ -80,6 +81,7 @@ export async function getAllPosts(): Promise<Post[]> {
               title
               subtitle
               brief
+              publishedAt
               url
               author {
                 name
