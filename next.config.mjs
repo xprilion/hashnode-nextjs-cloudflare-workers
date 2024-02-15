@@ -1,11 +1,14 @@
 import { setupDevBindings } from '@cloudflare/next-on-pages/next-dev';
 
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'cdn.hashnode.com'
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.hashnode.com',
+        port: '',
+      },
     ],
   },
 };
