@@ -40,22 +40,32 @@ type Params = {
   };
 };
 
-//export async function generateMetadata({ params }: Params): Metadata {
-//  const post = await getPostBySlug(params.slug);
-//
-//  if (!post) {
-//    return notFound();
-//  }
-//
-//  const title = `${post.title} | Next.js Blog Example with Hashnode Headless`;
-//
-//  return {
-//    openGraph: {
-//      title,
-//      images: [post.coverImage.url],
-//    },
-//  };
-//}
+export async function generateMetadata({ params }: Params): Metadata {
+  const post = await getPostBySlug(params.slug);
+
+  if (!post) {
+    return notFound();
+  }
+
+  const title = `${post.title} | Next.js Blog Example with Hashnode Headless`;
+
+  let ogData = {
+    openGraph: {
+      title
+    }
+  }
+
+  if(post.coverImage) {
+    ogData = {
+      openGraph: {
+        title,
+        images: [post.coverImage.url],
+      }
+    }
+  }
+
+  return ogData;
+}
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
