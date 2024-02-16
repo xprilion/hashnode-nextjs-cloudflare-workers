@@ -12,7 +12,7 @@ export function Intro() {
         >
           Next.js
         </a>{" "}
-        and me.
+        and Hashnode Headless.
       </h4>
     </section>
   );
