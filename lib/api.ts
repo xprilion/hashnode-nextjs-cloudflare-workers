@@ -1,9 +1,7 @@
 import { Post } from "@/interfaces/post";
 
 
-// Assuming Hashnode's GraphQL endpoint and your blog's identifier
 const HASHNODE_API_URL = process.env.HASHNODE_API_URL || "https://gql.hashnode.com"
-// const YOUR_BLOG_ID = 'your_blog_id_here'; // Use if needed to scope queries to your blog
 
 async function fetchGraphQL(query: string, variables?: Record<string, any>) {
   const response = await fetch(HASHNODE_API_URL, {
